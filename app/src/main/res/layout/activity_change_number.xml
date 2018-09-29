@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChangeNumberActivity"
+    android:background="@color/colorWhite">
+
+    <include layout="@layout/ami_action_bar"/>
+
+    <RelativeLayout
+        android:id="@+id/rr_restore"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:background="@android:color/holo_green_light"
+        android:layout_below="@+id/toolbar">
+
+        <TextView
+            android:id="@+id/restore_tv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Phục hồi"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/restore_tv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/restore_tv1"
+            android:text="Bạn đã chuyển sđt qua đầu số mới (10 số). Bạn có thể phục hồi lại đầu số cũ (11 số) nếu muốn."
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"/>
+
+
+        <ImageButton
+            android:id="@+id/bt_restore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_below="@+id/restore_tv2"
+            android:text="Quét danh bạ"
+            android:background="@drawable/ic_restore"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rr_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/rr_restore">
+
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quét Danh Bạ"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/tv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/tv1"
+            android:text="Tìm tất cả số điện thoại 11 số trong danh bạ."
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/tv3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/tv2"
+            android:text="Ứng dụng sẽ yêu cầu cấp quyền truy cập danh bạ."
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"/>
+
+        <ImageButton
+            android:id="@+id/bt_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_below="@+id/tv3"
+            android:text="Quét danh bạ"
+            android:background="@drawable/baseline_search_black_18"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rc_contact"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:layout_above="@+id/btConvert"
+        android:visibility="gone">
+    </android.support.v7.widget.RecyclerView>
+
+    <Button
+        android:id="@+id/btConvert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="Đã chọn 20 chuyển qua 10 số ->"
+        android:textColor="@color/colorWhite"
+        android:background="@android:color/darker_gray"
+        android:gravity="center"
+        android:visibility="gone"/>
+</RelativeLayout>

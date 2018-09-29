@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item
+        android:id="@+id/trangchu"
+        android:title="Trang chủ" />
+    <item
+        android:id="@+id/datsimtheoyeucau"
+        android:title="Đặt sim theo yêu cầu" />
+    <item
+        android:id="@+id/huongdanmuasim"
+        android:title="Hướng dẫn mua sim" />
+    <item
+        android:id="@+id/cacdichvucungcap"
+        android:title="Các dịch vụ cung cấp" />
+    <item
+        android:id="@+id/cacnhamang"
+        android:title="Các nhà mạng" />
+    <item
+        android:id="@+id/cacloaisim"
+        android:title="Các loại sim" />
+    <item
+        android:id="@+id/tintuc"
+        android:title="Tin tức" />
+    <item
+        android:id="@+id/lienhe"
+        android:title="Liên hệ" />
+
+</menu>
