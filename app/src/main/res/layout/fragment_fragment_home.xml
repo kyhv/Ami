@@ -45,10 +45,9 @@
                 android:id="@+id/ib_advance_search"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
                 android:layout_alignParentBottom="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginBottom="12dp"
-                android:layout_marginEnd="45dp"
+                android:layout_marginBottom="15dp"
                 android:scaleType="fitStart"
                 android:adjustViewBounds="true"
                 android:background="@drawable/bg_advance_search" />
