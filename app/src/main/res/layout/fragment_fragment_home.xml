@@ -49,6 +49,8 @@
                 android:layout_alignParentEnd="true"
                 android:layout_marginBottom="12dp"
                 android:layout_marginEnd="45dp"
+                android:scaleType="fitStart"
+                android:adjustViewBounds="true"
                 android:background="@drawable/bg_advance_search" />
         </RelativeLayout>
 
@@ -63,71 +65,87 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="30dp"
                 android:layout_centerInParent="true"
+                android:scaleType="fitStart"
+                android:adjustViewBounds="true"
                 android:background="@drawable/bg_service" />
         </RelativeLayout>
 
-        <RelativeLayout
+        <ImageView
             android:id="@+id/ll_contact"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/ll_service"
+            android:scaleType="fitStart"
+            android:adjustViewBounds="true"
             android:layout_marginBottom="5dp"
-            android:background="@drawable/ic_change_number">
-        </RelativeLayout>
+            android:src="@drawable/ic_change_number">
+        </ImageView>
 
-        <RelativeLayout
+        <ImageView
             android:id="@+id/ll_sim_birthday"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/ll_contact"
             android:layout_marginBottom="5dp"
-            android:background="@drawable/bg_sim_birthday">
-        </RelativeLayout>
+            android:scaleType="fitStart"
+            android:adjustViewBounds="true"
+            android:src="@drawable/bg_sim_birthday">
+        </ImageView>
 
-        <RelativeLayout
+        <ImageView
             android:id="@+id/ll_sim_tragop"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/ll_sim_birthday"
             android:layout_marginBottom="5dp"
-            android:background="@drawable/bg_sim_tragop">
-        </RelativeLayout>
+            android:scaleType="fitStart"
+            android:adjustViewBounds="true"
+            android:src="@drawable/bg_sim_tragop">
+        </ImageView>
 
-        <RelativeLayout
+        <ImageView
             android:id="@+id/ll_sim_phongthuy"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/ll_sim_tragop"
             android:layout_marginBottom="5dp"
-            android:background="@drawable/bg_sim_phongthuy">
-        </RelativeLayout>
+            android:scaleType="fitStart"
+            android:adjustViewBounds="true"
+            android:src="@drawable/bg_sim_phongthuy">
+        </ImageView>
 
-        <RelativeLayout
+        <ImageView
             android:id="@+id/ll_sim_khuyenmai50"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/ll_sim_phongthuy"
             android:layout_marginBottom="5dp"
-            android:background="@drawable/bg_sim_khuyenmai50">
-        </RelativeLayout>
+            android:scaleType="fitStart"
+            android:adjustViewBounds="true"
+            android:src="@drawable/bg_sim_khuyenmai50">
+        </ImageView>
 
-        <RelativeLayout
+        <ImageView
             android:id="@+id/ll_sim_vip"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/ll_sim_khuyenmai50"
             android:layout_marginBottom="5dp"
-            android:background="@drawable/bg_sim_vip">
-        </RelativeLayout>
+            android:scaleType="fitStart"
+            android:adjustViewBounds="true"
+            android:src="@drawable/bg_sim_vip">
+        </ImageView>
 
-        <RelativeLayout
+        <ImageView
             android:id="@+id/ll_sim_laixuatthap"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/ll_sim_vip"
             android:layout_marginBottom="5dp"
-            android:background="@drawable/bg_sim_laixuatthap">
-        </RelativeLayout>
+            android:scaleType="fitStart"
+            android:adjustViewBounds="true"
+            android:src="@drawable/bg_sim_laixuatthap">
+        </ImageView>
 
         <RelativeLayout
             android:id="@+id/ll_contact_info"

@@ -229,13 +229,12 @@ public class ChangeNumberActivity extends AppCompatActivity implements ContactAd
 
                 AmiLoading.hideLoadingDialog();
                 contactList.clear();
-                contactList.addAll(AmiUtils.getTotal11number(ChangeNumberActivity.this));
+                contactList.addAll(contacts);
                 if (contactList != null && contactList.size() > 0) {
                     rrRestore.setVisibility(View.GONE);
                     rrSearch.setVisibility(View.GONE);
                     rcContact.setVisibility(View.VISIBLE);
                     btConvert.setVisibility(View.VISIBLE);
-                    Collections.sort(contactList, new ContactComparator());
                     adapter.notifyDataSetChanged();
                     checkedContactList.addAll(contactList);
                     btConvert.setText("(ĐÃ CHỌN " + checkedContactList.size() + ")" + " CHUYỂN QUA 10 SỐ -->");

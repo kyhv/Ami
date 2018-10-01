@@ -14,8 +14,10 @@ import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
+import sodepami.com.ami.custom.ContactComparator;
 import sodepami.com.ami.model.Contact;
 
 import static android.content.Context.MODE_PRIVATE;
@@ -395,6 +397,9 @@ public class AmiUtils {
         }
         if(cur!=null){
             cur.close();
+        }
+        if (contacts.size() > 0) {
+            Collections.sort(contacts, new ContactComparator());
         }
         return contacts;
     }

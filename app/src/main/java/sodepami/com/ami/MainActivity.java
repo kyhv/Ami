@@ -107,25 +107,25 @@ public class MainActivity extends AppCompatActivity
             case R.id.trangchu:
                 break;
             case R.id.datsimtheoyeucau:
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://sodepami.vn/dat-sim-theo-yeu-cau.html")));
+                WebActivity.startWebActivity(MainActivity.this, "https://sodepami.vn/dat-sim-theo-yeu-cau.html");
                 break;
             case R.id.huongdanmuasim:
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://sodepami.vn/thong-tin/huong-dan-mua-sim.html")));
+                WebActivity.startWebActivity(MainActivity.this, "https://sodepami.vn/thong-tin/huong-dan-mua-sim.html");
                 break;
             case R.id.cacdichvucungcap:
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://sodepami.vn/bai-viet/mua-sim-tra-gop-ami.html")));
+                WebActivity.startWebActivity(MainActivity.this, "https://sodepami.vn/bai-viet/mua-sim-tra-gop-ami.html");
                 break;
             case R.id.cacnhamang:
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://sodepami.vn/sim-viettel.html")));
+                WebActivity.startWebActivity(MainActivity.this, "https://sodepami.vn/sim-viettel.html");
                 break;
             case R.id.cacloaisim:
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://sodepami.vn/sim-tat-ca/sim-luc-quy")));
+                WebActivity.startWebActivity(MainActivity.this, "https://sodepami.vn/sim-tat-ca/sim-luc-quy");
                 break;
             case R.id.tintuc:
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://sodepami.vn/tin-tuc.html")));
+                WebActivity.startWebActivity(MainActivity.this, "https://sodepami.vn/tin-tuc.html");
                 break;
             case R.id.lienhe:
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://sodepami.vn/lien-he.html")));
+                WebActivity.startWebActivity(MainActivity.this, "https://sodepami.vn/lien-he.html");
                 break;
             default:
                 break;

@@ -16,7 +16,9 @@ import android.widget.RelativeLayout;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import sodepami.com.ami.MainActivity;
 import sodepami.com.ami.R;
+import sodepami.com.ami.WebActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -26,7 +28,7 @@ import sodepami.com.ami.R;
  */
 public class FragmentHome extends Fragment implements View.OnClickListener{
 
-    RelativeLayout llContact, llBirthday, llTragop, llPhongthuy, llKhuyenmai50, llSimVip, llLaixuatthap;
+    ImageView llContact, llBirthday, llTragop, llPhongthuy, llKhuyenmai50, llSimVip, llLaixuatthap;
     EditText etSearch;
     ImageButton ibSearch;
 
@@ -57,13 +59,13 @@ public class FragmentHome extends Fragment implements View.OnClickListener{
     }
 
     private void initView(View view) {
-        llContact = (RelativeLayout) view.findViewById(R.id.ll_contact);
-        llBirthday = (RelativeLayout) view.findViewById(R.id.ll_sim_birthday);
-        llTragop = (RelativeLayout) view.findViewById(R.id.ll_sim_tragop);
-        llPhongthuy = (RelativeLayout) view.findViewById(R.id.ll_sim_phongthuy);
-        llKhuyenmai50 = (RelativeLayout) view.findViewById(R.id.ll_sim_khuyenmai50);
-        llSimVip = (RelativeLayout) view.findViewById(R.id.ll_sim_vip);
-        llLaixuatthap = (RelativeLayout) view.findViewById(R.id.ll_sim_laixuatthap);
+        llContact = (ImageView) view.findViewById(R.id.ll_contact);
+        llBirthday = (ImageView) view.findViewById(R.id.ll_sim_birthday);
+        llTragop = (ImageView) view.findViewById(R.id.ll_sim_tragop);
+        llPhongthuy = (ImageView) view.findViewById(R.id.ll_sim_phongthuy);
+        llKhuyenmai50 = (ImageView) view.findViewById(R.id.ll_sim_khuyenmai50);
+        llSimVip = (ImageView) view.findViewById(R.id.ll_sim_vip);
+        llLaixuatthap = (ImageView) view.findViewById(R.id.ll_sim_laixuatthap);
         etSearch = (EditText) view.findViewById(R.id.tv_search);
         ibSearch = (ImageButton) view.findViewById(R.id.ib_search);
     }
@@ -105,26 +107,26 @@ public class FragmentHome extends Fragment implements View.OnClickListener{
                 }
                 break;
             case R.id.ll_sim_birthday:
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://sodepami.vn/sim-nam-sinh.html")));
+                WebActivity.startWebActivity(getContext(), "https://sodepami.vn/sim-nam-sinh.html");
                 break;
             case R.id.ll_sim_tragop:
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://sodepami.vn/bai-viet/mua-sim-tra-gop-ami.html")));
+                WebActivity.startWebActivity(getContext(), "https://sodepami.vn/bai-viet/mua-sim-tra-gop-ami.html");
                 break;
             case R.id.ll_sim_phongthuy:
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://sodepami.vn/sim-phong-thuy.html")));
+                WebActivity.startWebActivity(getContext(), "https://sodepami.vn/sim-phong-thuy.html");
                 break;
             case R.id.ll_sim_khuyenmai50:
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://sodepami.vn/sim-giam-gia.html")));
+                WebActivity.startWebActivity(getContext(), "https://sodepami.vn/sim-giam-gia.html");
                 break;
             case R.id.ll_sim_vip:
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://sodepami.vn/bai-viet/thue-sim-vip.html")));
+                WebActivity.startWebActivity(getContext(), "https://sodepami.vn/bai-viet/thue-sim-vip.html");
                 break;
             case R.id.ll_sim_laixuatthap:
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://sodepami.vn/tin-tuc.html")));
+                WebActivity.startWebActivity(getContext(), "https://sodepami.vn/tin-tuc.html");
                 break;
             case R.id.ib_search:
                 String url = "https://sodepami.vn/tim-sim.html?key=" + etSearch.getText().toString().trim();
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
+                WebActivity.startWebActivity(getContext(), url);
                 break;
             default:
                 return;
