@@ -2,30 +2,45 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
-
-    <item
-        android:id="@+id/trangchu"
-        android:title="Trang chủ" />
-    <item
-        android:id="@+id/datsimtheoyeucau"
-        android:title="Đặt sim theo yêu cầu" />
-    <item
-        android:id="@+id/huongdanmuasim"
-        android:title="Hướng dẫn mua sim" />
-    <item
-        android:id="@+id/cacdichvucungcap"
-        android:title="Các dịch vụ cung cấp" />
-    <item
-        android:id="@+id/cacnhamang"
-        android:title="Các nhà mạng" />
-    <item
-        android:id="@+id/cacloaisim"
-        android:title="Các loại sim" />
-    <item
-        android:id="@+id/tintuc"
-        android:title="Tin tức" />
-    <item
-        android:id="@+id/lienhe"
-        android:title="Liên hệ" />
+    <group android:id="@+id/grp1" android:checkableBehavior="single">
+        <item
+            android:id="@+id/trangchu"
+            android:title="Trang chủ" />
+    </group>
+    <group android:id="@+id/grp2" android:checkableBehavior="single">
+        <item
+            android:id="@+id/datsimtheoyeucau"
+            android:title="Đặt sim theo yêu cầu" />
+    </group>
+    <group android:id="@+id/grp3" android:checkableBehavior="single">
+        <item
+            android:id="@+id/huongdanmuasim"
+            android:title="Hướng dẫn mua sim" />
+    </group>
+    <group android:id="@+id/grp4" android:checkableBehavior="single">
+        <item
+            android:id="@+id/cacdichvucungcap"
+            android:title="Các dịch vụ cung cấp" />
+    </group>
+    <group android:id="@+id/grp5" android:checkableBehavior="single">
+        <item
+            android:id="@+id/cacnhamang"
+            android:title="Các nhà mạng" />
+    </group>
+    <group android:id="@+id/grp6" android:checkableBehavior="single">
+        <item
+            android:id="@+id/cacloaisim"
+            android:title="Các loại sim" />
+    </group>
+    <group android:id="@+id/grp7" android:checkableBehavior="single">
+        <item
+            android:id="@+id/tintuc"
+            android:title="Tin tức" />
+    </group>
+    <group android:id="@+id/grp8" android:checkableBehavior="single">
+        <item
+            android:id="@+id/lienhe"
+            android:title="Liên hệ" />
+    </group>
 
 </menu>

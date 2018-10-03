@@ -122,7 +122,7 @@ public class FragmentHome extends Fragment implements View.OnClickListener{
                 WebActivity.startWebActivity(getContext(), "https://sodepami.vn/bai-viet/thue-sim-vip.html");
                 break;
             case R.id.ll_sim_laixuatthap:
-                WebActivity.startWebActivity(getContext(), "https://sodepami.vn/tin-tuc.html");
+                WebActivity.startWebActivity(getContext(), " https://sodepami.vn/bai-viet/cam-sim-dep.html");
                 break;
             case R.id.ib_search:
                 String url = "https://sodepami.vn/tim-sim.html?key=" + etSearch.getText().toString().trim();

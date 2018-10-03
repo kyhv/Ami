@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.design.internal.NavigationMenuItemView;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentTransaction;
@@ -105,6 +106,7 @@ public class MainActivity extends AppCompatActivity
 
         switch (id) {
             case R.id.trangchu:
+                WebActivity.startWebActivity(MainActivity.this, "https://sodepami.vn");
                 break;
             case R.id.datsimtheoyeucau:
                 WebActivity.startWebActivity(MainActivity.this, "https://sodepami.vn/dat-sim-theo-yeu-cau.html");
