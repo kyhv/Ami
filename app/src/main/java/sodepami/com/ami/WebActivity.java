@@ -4,12 +4,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -39,6 +41,15 @@ public class WebActivity extends AppCompatActivity {
         setContentView(R.layout.activity_web);
 
         initView();
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (mWebView.canGoBack()) {
+            mWebView.goBack();
+        } else {
+            super.onBackPressed();
+        }
     }
 
     private void setStatusBar() {
@@ -73,8 +84,25 @@ public class WebActivity extends AppCompatActivity {
 
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+                String loadingUrl = request.getUrl().toString();
+                if (!TextUtils.isEmpty(loadingUrl) && loadingUrl.startsWith("tel:")) {
+                    Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse(loadingUrl));
+                    startActivity(intent);
+                    return true;
+                }
                 mLoadingBar.setVisibility(View.VISIBLE);
                 return super.shouldOverrideUrlLoading(view, request);
+            }
+
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                if (!TextUtils.isEmpty(url) && url.startsWith("tel:")) {
+                    Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse(url));
+                    startActivity(intent);
+                    return true;
+                }
+                mLoadingBar.setVisibility(View.VISIBLE);
+                return super.shouldOverrideUrlLoading(view, url);
             }
 
             @Override
@@ -83,20 +111,6 @@ public class WebActivity extends AppCompatActivity {
                 mLoadingBar.setVisibility(View.GONE);
             }
         });
-        /*mWebView.setWebChromeClient(new WebChromeClient() {
-            @Override
-            public void onProgressChanged(WebView view, int newProgress) {
-                if(newProgress == maxProgress){
-                    mLoadingBar.setVisibility(View.GONE);
-                }
-            }
-
-            @Override
-            public void onReceivedTitle(WebView view, String title) {
-                // do something
-            }
-
-        });*/
         mWebView.loadUrl(url);
         mLoadingBar.setVisibility(View.VISIBLE);
     }

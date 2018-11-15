@@ -9,6 +9,7 @@ import android.support.v4.view.GravityCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -28,9 +29,10 @@ import sodepami.com.ami.WebActivity;
  */
 public class FragmentHome extends Fragment implements View.OnClickListener{
 
-    ImageView llContact, llBirthday, llTragop, llPhongthuy, llKhuyenmai50, llSimVip, llLaixuatthap;
+    ImageView llContact, llBirthday, llTragop, llPhongthuy, llKhuyenmai50, llSimVip, llLaixuatthap, llConnect;
     EditText etSearch;
     ImageButton ibSearch;
+    ImageView btHotro, btChat;
 
     public OnFragmentInteractionListener getListener() {
         return mListener;
@@ -68,6 +70,9 @@ public class FragmentHome extends Fragment implements View.OnClickListener{
         llLaixuatthap = (ImageView) view.findViewById(R.id.ll_sim_laixuatthap);
         etSearch = (EditText) view.findViewById(R.id.tv_search);
         ibSearch = (ImageButton) view.findViewById(R.id.ib_search);
+        btHotro = (ImageView) view.findViewById(R.id.btHotro);
+        btChat = (ImageView) view.findViewById(R.id.btChat);
+        llConnect = (ImageView) view.findViewById(R.id.ll_connect);
     }
 
     private void initClickedListener() {
@@ -79,6 +84,9 @@ public class FragmentHome extends Fragment implements View.OnClickListener{
         llSimVip.setOnClickListener(this);
         llLaixuatthap.setOnClickListener(this);
         ibSearch.setOnClickListener(this);
+        btHotro.setOnClickListener(this);
+        btChat.setOnClickListener(this);
+        llConnect.setOnClickListener(this);
     }
 
     @Override
@@ -127,6 +135,16 @@ public class FragmentHome extends Fragment implements View.OnClickListener{
             case R.id.ib_search:
                 String url = "https://sodepami.vn/tim-sim.html?key=" + etSearch.getText().toString().trim();
                 WebActivity.startWebActivity(getContext(), url);
+                break;
+            case R.id.btHotro:
+                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:19002219"));
+                startActivity(intent);
+                break;
+            case R.id.btChat:
+                WebActivity.startWebActivity(getContext(), "https://www.facebook.com/sodepami");
+                break;
+            case R.id.ll_connect:
+                WebActivity.startWebActivity(getContext(), "https://sodepami.vn/ctv");
                 break;
             default:
                 return;

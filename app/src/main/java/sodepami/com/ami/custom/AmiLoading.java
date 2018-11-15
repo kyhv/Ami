@@ -1,6 +1,7 @@
 package sodepami.com.ami.custom;
 
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
@@ -10,19 +11,19 @@ import sodepami.com.ami.R;
 
 public class AmiLoading {
 
-    private static AlertDialog alertDialog;
+    private static ProgressDialog progressDialog;
 
     public static void showLoadingDialog(Context context) {
-        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(new ContextThemeWrapper(context, R.style.FullScreenDialog));
-        LayoutInflater inflater = (LayoutInflater) context.getSystemService( Context.LAYOUT_INFLATER_SERVICE );
-        View dialogView = inflater.inflate(R.layout.custom_loading, null);
-        dialogBuilder.setView(dialogView);
-        dialogBuilder.setCancelable(false);
-        alertDialog = dialogBuilder.create();
-        alertDialog.show();
+        progressDialog = new ProgressDialog(context, R.style.ProgressTheme);
+        progressDialog.setCancelable(false);
+        progressDialog.setCanceledOnTouchOutside(false);
+        progressDialog.show();
     }
 
     public static void hideLoadingDialog(){
-        alertDialog.dismiss();
+        if (progressDialog != null
+                && progressDialog.isShowing()) {
+            progressDialog.dismiss();
+        }
     }
 }

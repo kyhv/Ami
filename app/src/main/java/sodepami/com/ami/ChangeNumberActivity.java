@@ -129,27 +129,7 @@ public class ChangeNumberActivity extends AppCompatActivity implements ContactAd
                     builder.setPositiveButton("Đồng ý", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int position) {
-                            List<Contact> saveContact = AmiUtils.getChangedContactList(ChangeNumberActivity.this);
-                            if (saveContact == null) {
-                                saveContact = new ArrayList<>();
-                            }
-                            for (int i = 0; i < checkedContactList.size(); i++) {
-                                Contact contact = checkedContactList.get(i);
-                                if (!saveContact.contains(contact)) {
-                                    saveContact.add(contact);
-                                }
-                            }
-                            /*List<Contact> demo = new ArrayList<>();
-                            demo.add(checkedContactList.get(0));*/
-                            AmiUtils.updateNumberto10(ChangeNumberActivity.this, checkedContactList);
-                            AmiUtils.saveChangedContactList(ChangeNumberActivity.this, saveContact);
-                            AmiUtils.saveChangedContactList(ChangeNumberActivity.this, saveContact);
-                            DialogHelper.alertDialog(ChangeNumberActivity.this, "Chuyền đầu số thành công!", "OK", new DialogHelper.DialogButtonListener() {
-                                @Override
-                                public void onOKClicked() {
-                                    ChangeNumberActivity.this.finish();
-                                }
-                            });
+                            convertNumber();
                         }
                     });
                     builder.setNegativeButton("Không", null);
@@ -187,18 +167,7 @@ public class ChangeNumberActivity extends AppCompatActivity implements ContactAd
                 builder.setPositiveButton("Đồng ý", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int position) {
-                        List<Contact> saveContact = AmiUtils.getChangedContactList(ChangeNumberActivity.this);
-                        if (saveContact != null && saveContact.size() > 0) {
-                            AmiUtils.restoreNumberto11(ChangeNumberActivity.this, saveContact);
-                            saveContact.clear();
-                        }
-                        AmiUtils.saveChangedContactList(ChangeNumberActivity.this, saveContact);
-                        DialogHelper.alertDialog(ChangeNumberActivity.this, "Phục hồi thành công!", "OK", new DialogHelper.DialogButtonListener() {
-                            @Override
-                            public void onOKClicked() {
-                                ChangeNumberActivity.this.finish();
-                            }
-                        });
+                        restoreNumber();
                     }
                 });
                 builder.setNegativeButton("Không", null);
@@ -206,6 +175,89 @@ public class ChangeNumberActivity extends AppCompatActivity implements ContactAd
                 builder.show();
             }
         });
+    }
+
+    private void convertNumber() {
+        @SuppressLint("StaticFieldLeak")
+        AsyncTask<Void, Void, Void> asyncTask = new AsyncTask<Void, Void, Void>() {
+
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+                AmiLoading.showLoadingDialog(ChangeNumberActivity.this);
+            }
+
+            @Override
+            protected Void doInBackground(Void... voids) {
+                List<Contact> saveContact = AmiUtils.getChangedContactList(ChangeNumberActivity.this);
+                if (saveContact == null) {
+                    saveContact = new ArrayList<>();
+                }
+                for (int i = 0; i < checkedContactList.size(); i++) {
+                    Contact contact = checkedContactList.get(i);
+                    if (!saveContact.contains(contact)) {
+                        saveContact.add(contact);
+                    }
+                }
+                AmiUtils.updateNumberto10(ChangeNumberActivity.this, checkedContactList);
+                AmiUtils.saveChangedContactList(ChangeNumberActivity.this, saveContact);
+                AmiUtils.saveChangedContactList(ChangeNumberActivity.this, saveContact);
+                return null;
+            }
+
+
+            @Override
+            protected void onPostExecute(Void voids) {
+                super.onPostExecute(voids);
+
+                AmiLoading.hideLoadingDialog();
+                DialogHelper.alertDialog(ChangeNumberActivity.this, "Chuyền đầu số thành công!", "OK", new DialogHelper.DialogButtonListener() {
+                    @Override
+                    public void onOKClicked() {
+                        ChangeNumberActivity.this.finish();
+                    }
+                });
+            }
+        };
+        asyncTask.execute();
+    }
+
+    private void restoreNumber() {
+        @SuppressLint("StaticFieldLeak")
+        AsyncTask<Void, Void, Void> asyncTask = new AsyncTask<Void, Void, Void>() {
+
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+                AmiLoading.showLoadingDialog(ChangeNumberActivity.this);
+            }
+
+            @Override
+            protected Void doInBackground(Void... voids) {
+                List<Contact> saveContact = AmiUtils.getChangedContactList(ChangeNumberActivity.this);
+                if (saveContact != null && saveContact.size() > 0) {
+                    AmiUtils.restoreNumberto11(ChangeNumberActivity.this, saveContact);
+                    saveContact.clear();
+                }
+                AmiUtils.saveChangedContactList(ChangeNumberActivity.this, saveContact);
+                return null;
+            }
+
+
+            @Override
+            protected void onPostExecute(Void voids) {
+                super.onPostExecute(voids);
+
+                AmiLoading.hideLoadingDialog();
+                DialogHelper.alertDialog(ChangeNumberActivity.this, "Phục hồi thành công!", "OK", new DialogHelper.DialogButtonListener() {
+                    @Override
+                    public void onOKClicked() {
+                        ChangeNumberActivity.this.finish();
+                    }
+                });
+            }
+        };
+        asyncTask.execute();
     }
 
     private void loading11Number() {

@@ -1,330 +1,369 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragment.FragmentHome">
-
-    <RelativeLayout
+    <ScrollView
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/layoutHotro">
 
         <RelativeLayout
-            android:id="@+id/ll_search"
             android:layout_width="match_parent"
-            android:layout_height="125dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:background="@drawable/bg_search">
+            android:layout_height="match_parent">
 
-            <EditText
-                android:id="@+id/tv_search"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_alignTop="@+id/ib_search"
-                android:layout_marginLeft="15dp"
-                android:layout_toLeftOf="@+id/ib_search"
-                android:paddingLeft="10dp"
-                android:gravity="center_vertical"
-                android:hint="Ví dụ: 09*86, 08*86..."
-                android:textSize="16sp"
-                android:maxLines="1"
-                android:background="@drawable/selector_et_search"
-                android:focusableInTouchMode="true"
-                android:focusedByDefault="false"/>
-
-            <ImageButton
-                android:id="@+id/ib_search"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_margin="15dp"
-                android:background="@drawable/bg_bt_search" />
-
-            <ImageButton
-                android:id="@+id/ib_advance_search"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginBottom="15dp"
-                android:scaleType="fitStart"
-                android:adjustViewBounds="true"
-                android:background="@drawable/bg_advance_search" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/ll_service"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/ll_search" >
-            <ImageButton
-                android:id="@+id/ib_service"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="30dp"
-                android:layout_centerInParent="true"
-                android:scaleType="fitStart"
-                android:adjustViewBounds="true"
-                android:background="@drawable/bg_service" />
-        </RelativeLayout>
-
-        <ImageView
-            android:id="@+id/ll_contact"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/ll_service"
-            android:scaleType="fitStart"
-            android:adjustViewBounds="true"
-            android:layout_marginBottom="5dp"
-            android:src="@drawable/ic_change_number">
-        </ImageView>
-
-        <ImageView
-            android:id="@+id/ll_sim_birthday"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/ll_contact"
-            android:layout_marginBottom="5dp"
-            android:scaleType="fitStart"
-            android:adjustViewBounds="true"
-            android:src="@drawable/bg_sim_birthday">
-        </ImageView>
-
-        <ImageView
-            android:id="@+id/ll_sim_tragop"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/ll_sim_birthday"
-            android:layout_marginBottom="5dp"
-            android:scaleType="fitStart"
-            android:adjustViewBounds="true"
-            android:src="@drawable/bg_sim_tragop">
-        </ImageView>
-
-        <ImageView
-            android:id="@+id/ll_sim_phongthuy"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/ll_sim_tragop"
-            android:layout_marginBottom="5dp"
-            android:scaleType="fitStart"
-            android:adjustViewBounds="true"
-            android:src="@drawable/bg_sim_phongthuy">
-        </ImageView>
-
-        <ImageView
-            android:id="@+id/ll_sim_khuyenmai50"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/ll_sim_phongthuy"
-            android:layout_marginBottom="5dp"
-            android:scaleType="fitStart"
-            android:adjustViewBounds="true"
-            android:src="@drawable/bg_sim_khuyenmai50">
-        </ImageView>
-
-        <ImageView
-            android:id="@+id/ll_sim_vip"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/ll_sim_khuyenmai50"
-            android:layout_marginBottom="5dp"
-            android:scaleType="fitStart"
-            android:adjustViewBounds="true"
-            android:src="@drawable/bg_sim_vip">
-        </ImageView>
-
-        <ImageView
-            android:id="@+id/ll_sim_laixuatthap"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/ll_sim_vip"
-            android:layout_marginBottom="5dp"
-            android:scaleType="fitStart"
-            android:adjustViewBounds="true"
-            android:src="@drawable/bg_sim_laixuatthap">
-        </ImageView>
-
-        <RelativeLayout
-            android:id="@+id/ll_contact_info"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/ll_sim_laixuatthap"
-            android:layout_marginTop="125dp"
-            android:background="#2F2F2F">
-
-            <TextView
-                android:id="@+id/tvOffice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_alignParentLeft="true"
-                android:text="VĂN PHÒNG GIAO DỊCH"
-
-                android:textStyle="bold"
-                android:textColor="@color/colorWhite"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/tvOffice1It1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_alignParentLeft="true"
-                android:drawableLeft="@drawable/ic_map"
-                android:drawablePadding="5dp"
-                android:text="Văn phòng hà nội:"
-                android:textStyle="bold"
-                android:textColor="@color/colorWhite"
-                android:layout_below="@+id/tvOffice"
-                android:textSize="16sp" />
-            <TextView
-                android:id="@+id/tvOffice1It2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="32dp"
-                android:layout_alignParentLeft="true"
-                android:text="C15 Trần Điền - Định Công - Hoàng Mai - Tp Hà Nội."
-                android:textColor="@color/colorWhite"
-                android:layout_below="@+id/tvOffice1It1"
-                android:textSize="16sp" />
-            <TextView
-                android:id="@+id/tvOffice1It3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="32dp"
-                android:layout_alignParentLeft="true"
-                android:text="Điện thoại: (024) 39.11.9999"
-                android:textColor="@color/colorWhite"
-                android:layout_below="@+id/tvOffice1It2"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/tvOffice2It1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_alignParentLeft="true"
-                android:drawableLeft="@drawable/ic_map"
-                android:drawablePadding="5dp"
-                android:text="Văn phòng TP HCM:"
-                android:textStyle="bold"
-                android:textColor="@color/colorWhite"
-                android:layout_below="@+id/tvOffice1It3"
-                android:textSize="16sp" />
-            <TextView
-                android:id="@+id/tvOffice2It2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="32dp"
-                android:layout_alignParentLeft="true"
-                android:text="244/31/31 Hiệp Thành 17 - Hiệp Thành - Q12 - Tp Hồ Chí Minh."
-                android:textColor="@color/colorWhite"
-                android:layout_below="@+id/tvOffice2It1"
-                android:textSize="16sp" />
-            <TextView
-                android:id="@+id/tvOffice2It3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="32dp"
-                android:layout_alignParentLeft="true"
-                android:text="Điện thoại: (028) 38.86.8888"
-                android:textColor="@color/colorWhite"
-                android:layout_below="@+id/tvOffice2It2"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/tvOffice3It1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_alignParentLeft="true"
-                android:drawableLeft="@drawable/ic_map"
-                android:drawablePadding="5dp"
-                android:text="Văn phòng Đà Nẵng:"
-                android:textStyle="bold"
-                android:textColor="@color/colorWhite"
-                android:layout_below="@+id/tvOffice2It3"
-                android:textSize="16sp" />
-            <TextView
-                android:id="@+id/tvOffice3It2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="32dp"
-                android:layout_alignParentLeft="true"
-                android:text="21 Trương Chí Cương - Hải Châu - Đà Nẵng."
-                android:textColor="@color/colorWhite"
-                android:layout_below="@+id/tvOffice3It1"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/tvOffice4It1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_alignParentLeft="true"
-                android:drawableLeft="@drawable/ic_map"
-                android:drawablePadding="5dp"
-                android:text="Văn phòng Hải Dương:"
-                android:textStyle="bold"
-                android:textColor="@color/colorWhite"
-                android:layout_below="@+id/tvOffice3It2"
-                android:textSize="16sp" />
-            <TextView
-                android:id="@+id/tvOffice4It2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="32dp"
-                android:layout_alignParentLeft="true"
-                android:text="39 Lê Thanh Nghị - Phạm Ngũ Lão - Tp Hải Dương."
-                android:textColor="@color/colorWhite"
-                android:layout_below="@+id/tvOffice4It1"
-                android:textSize="16sp" />
-            <TextView
-                android:id="@+id/tvOffice4It3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="32dp"
-                android:layout_alignParentLeft="true"
-                android:text="Điện thoại: (0220) 3.86.86.86"
-                android:textColor="@color/colorWhite"
-                android:layout_below="@+id/tvOffice4It2"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/tvGuide"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginBottom="15dp"
-                android:layout_alignParentLeft="true"
-                android:text="* Các chi nhánh đại lý sim số đẹp trên khắp cả nước. Hỗ trợ giao sim tận nơi và miễn phí trên toàn quốc."
-                android:textColor="@color/colorWhite"
-                android:layout_below="@+id/tvOffice4It3"
-                android:textSize="16sp" />
             <RelativeLayout
+                android:id="@+id/ll_search"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@android:color/black"
-                android:layout_below="@+id/tvGuide">
-                <TextView
-                    android:id="@+id/tvBanquyen"
+                android:layout_height="100dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/bg_search">
+
+                <EditText
+                    android:id="@+id/tv_search"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_alignTop="@+id/ib_search"
+                    android:layout_marginLeft="15dp"
+                    android:layout_toLeftOf="@+id/ib_search"
+                    android:paddingLeft="10dp"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center_vertical"
+                    android:hint="Ví dụ: 09*86, 08*86..."
+                    android:textSize="16sp"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:background="@drawable/selector_et_search"
+                    android:focusableInTouchMode="true"
+                    android:focusedByDefault="false"/>
+
+                <ImageButton
+                    android:id="@+id/ib_search"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="20dp"
-                    android:text="Bản quyền @2003 - 2018 by SODEPAMI.COM - Thương hiệu sim số đẹp lớn nhất Việt Nam!"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_margin="15dp"
+                    android:background="@drawable/bg_bt_search" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/ll_service"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_search" >
+                <ImageButton
+                    android:id="@+id/ib_service"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="30dp"
+                    android:layout_centerInParent="true"
+                    android:scaleType="fitStart"
+                    android:adjustViewBounds="true"
+                    android:background="@drawable/bg_service" />
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/ll_contact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_service"
+                android:scaleType="fitStart"
+                android:adjustViewBounds="true"
+                android:layout_marginBottom="5dp"
+                android:src="@drawable/ic_change_number">
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/ll_sim_birthday"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_contact"
+                android:layout_marginBottom="5dp"
+                android:scaleType="fitStart"
+                android:adjustViewBounds="true"
+                android:src="@drawable/bg_sim_birthday">
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/ll_sim_tragop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_sim_birthday"
+                android:layout_marginBottom="5dp"
+                android:scaleType="fitStart"
+                android:adjustViewBounds="true"
+                android:src="@drawable/bg_sim_tragop">
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/ll_sim_phongthuy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_sim_tragop"
+                android:layout_marginBottom="5dp"
+                android:scaleType="fitStart"
+                android:adjustViewBounds="true"
+                android:src="@drawable/bg_sim_phongthuy">
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/ll_sim_khuyenmai50"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_sim_phongthuy"
+                android:layout_marginBottom="5dp"
+                android:scaleType="fitStart"
+                android:adjustViewBounds="true"
+                android:src="@drawable/bg_sim_khuyenmai50">
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/ll_sim_vip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_sim_khuyenmai50"
+                android:layout_marginBottom="5dp"
+                android:scaleType="fitStart"
+                android:adjustViewBounds="true"
+                android:src="@drawable/bg_sim_vip">
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/ll_sim_laixuatthap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_sim_vip"
+                android:layout_marginBottom="5dp"
+                android:scaleType="fitStart"
+                android:adjustViewBounds="true"
+                android:src="@drawable/bg_sim_laixuatthap">
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/ll_connect"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_sim_laixuatthap"
+                android:scaleType="fitStart"
+                android:adjustViewBounds="true"
+                android:layout_marginBottom="5dp"
+                android:src="@drawable/ic_connect">
+            </ImageView>
+
+            <RelativeLayout
+                android:id="@+id/ll_contact_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_connect"
+                android:background="#2F2F2F">
+
+                <TextView
+                    android:id="@+id/tvOffice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_alignParentLeft="true"
+                    android:text="VĂN PHÒNG GIAO DỊCH"
+                    android:textStyle="bold"
                     android:textColor="@color/colorWhite"
-                    android:textSize="16sp"
-                    android:gravity="center"/>
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/tvOffice1It1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_alignParentLeft="true"
+                    android:drawableLeft="@drawable/ic_map"
+                    android:drawablePadding="5dp"
+                    android:text="Văn phòng hà nội:"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorWhite"
+                    android:layout_below="@+id/tvOffice"
+                    android:textSize="16sp" />
+                <TextView
+                    android:id="@+id/tvOffice1It2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_alignParentLeft="true"
+                    android:text="C15 Trần Điền - Định Công - Hoàng Mai - Tp Hà Nội."
+                    android:textColor="@color/colorWhite"
+                    android:layout_below="@+id/tvOffice1It1"
+                    android:textSize="16sp" />
+                <TextView
+                    android:id="@+id/tvOffice1It3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_alignParentLeft="true"
+                    android:text="Điện thoại: (024) 39.11.9999"
+                    android:textColor="@color/colorWhite"
+                    android:layout_below="@+id/tvOffice1It2"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tvOffice2It1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_alignParentLeft="true"
+                    android:drawableLeft="@drawable/ic_map"
+                    android:drawablePadding="5dp"
+                    android:text="Văn phòng TP HCM:"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorWhite"
+                    android:layout_below="@+id/tvOffice1It3"
+                    android:textSize="16sp" />
+                <TextView
+                    android:id="@+id/tvOffice2It2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_alignParentLeft="true"
+                    android:text="244/31/31 Hiệp Thành 17 - Hiệp Thành - Q12 - Tp Hồ Chí Minh."
+                    android:textColor="@color/colorWhite"
+                    android:layout_below="@+id/tvOffice2It1"
+                    android:textSize="16sp" />
+                <TextView
+                    android:id="@+id/tvOffice2It3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_alignParentLeft="true"
+                    android:text="Điện thoại: (028) 38.86.8888"
+                    android:textColor="@color/colorWhite"
+                    android:layout_below="@+id/tvOffice2It2"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tvOffice3It1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_alignParentLeft="true"
+                    android:drawableLeft="@drawable/ic_map"
+                    android:drawablePadding="5dp"
+                    android:text="Văn phòng Đà Nẵng:"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorWhite"
+                    android:layout_below="@+id/tvOffice2It3"
+                    android:textSize="16sp" />
+                <TextView
+                    android:id="@+id/tvOffice3It2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_alignParentLeft="true"
+                    android:text="21 Trương Chí Cương - Hải Châu - Đà Nẵng."
+                    android:textColor="@color/colorWhite"
+                    android:layout_below="@+id/tvOffice3It1"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tvOffice4It1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_alignParentLeft="true"
+                    android:drawableLeft="@drawable/ic_map"
+                    android:drawablePadding="5dp"
+                    android:text="Văn phòng Hải Dương:"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorWhite"
+                    android:layout_below="@+id/tvOffice3It2"
+                    android:textSize="16sp" />
+                <TextView
+                    android:id="@+id/tvOffice4It2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_alignParentLeft="true"
+                    android:text="39 Lê Thanh Nghị - Phạm Ngũ Lão - Tp Hải Dương."
+                    android:textColor="@color/colorWhite"
+                    android:layout_below="@+id/tvOffice4It1"
+                    android:textSize="16sp" />
+                <TextView
+                    android:id="@+id/tvOffice4It3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_alignParentLeft="true"
+                    android:text="Điện thoại: (0220) 3.86.86.86"
+                    android:textColor="@color/colorWhite"
+                    android:layout_below="@+id/tvOffice4It2"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tvGuide"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_alignParentLeft="true"
+                    android:text="* Các chi nhánh đại lý sim số đẹp trên khắp cả nước. Hỗ trợ giao sim tận nơi và miễn phí trên toàn quốc."
+                    android:textColor="@color/colorWhite"
+                    android:layout_below="@+id/tvOffice4It3"
+                    android:textSize="16sp" />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/black"
+                    android:layout_below="@+id/tvGuide">
+                    <TextView
+                        android:id="@+id/tvBanquyen"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+                        android:text="Bản quyền @2003 - 2018 by SODEPAMI.COM - Thương hiệu sim số đẹp lớn nhất Việt Nam!"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="16sp"
+                        android:gravity="center"/>
+                </RelativeLayout>
             </RelativeLayout>
         </RelativeLayout>
-    </RelativeLayout>
+    </ScrollView>
 
-</ScrollView>
+    <LinearLayout
+        android:id="@+id/layoutHotro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:padding="0dp"
+        android:layout_margin="0dp">
+        <ImageView
+            android:id="@+id/btHotro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorWhite"
+            android:layout_weight="0.5"
+            android:padding="0dp"
+            android:src="@drawable/ic_hotro"
+            android:layout_marginRight="1dp"
+            android:adjustViewBounds="true"/>
+        <ImageView
+            android:id="@+id/btChat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_chat"
+            android:layout_weight="0.5"
+            android:padding="0dp"
+            android:layout_marginLeft="1dp"
+            android:adjustViewBounds="true"/>
+    </LinearLayout>
+
+</RelativeLayout>

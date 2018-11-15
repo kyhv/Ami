@@ -1,43 +1,364 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:showIn="navigation_view">
-    <group android:id="@+id/grp1" android:checkableBehavior="single">
+    <group
+        android:id="@+id/grp1"
+        android:checkableBehavior="single">
         <item
             android:id="@+id/trangchu"
             android:title="Trang chủ" />
     </group>
-    <group android:id="@+id/grp2" android:checkableBehavior="single">
+    <group
+        android:id="@+id/grp2"
+        android:checkableBehavior="single">
         <item
             android:id="@+id/datsimtheoyeucau"
             android:title="Đặt sim theo yêu cầu" />
     </group>
-    <group android:id="@+id/grp3" android:checkableBehavior="single">
+    <group
+        android:id="@+id/grp3"
+        android:checkableBehavior="single">
         <item
             android:id="@+id/huongdanmuasim"
             android:title="Hướng dẫn mua sim" />
     </group>
-    <group android:id="@+id/grp4" android:checkableBehavior="single">
+    <group
+        android:id="@+id/grp4"
+        android:checkableBehavior="single">
+
         <item
             android:id="@+id/cacdichvucungcap"
             android:title="Các dịch vụ cung cấp" />
     </group>
-    <group android:id="@+id/grp5" android:checkableBehavior="single">
+    <group
+        android:id="@+id/grp5"
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/simtragop"
+            android:icon="@drawable/ic_right"
+            android:title="Sim trả góp"
+            android:visible="false" />
+    </group>
+    <group
+        android:id="@+id/grp6"
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/thuesimvip"
+            android:icon="@drawable/ic_right"
+            android:title="Thuê sim vip"
+            android:visible="false" />
+    </group>
+    <group
+        android:id="@+id/grp7"
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/camsimdep"
+            android:icon="@drawable/ic_right"
+            android:title="Cầm sim đẹp"
+            android:visible="false" />
+    </group>
+    <group
+        android:id="@+id/gr8"
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/simnamsinh"
+            android:icon="@drawable/ic_right"
+            android:title="Sim năm sinh"
+            android:visible="false" />
+    </group>
+    <group
+        android:id="@+id/gr9"
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/tracuusimphongthuy"
+            android:icon="@drawable/ic_right"
+            android:title="Tra cứu sim phong thuỷ"
+            android:visible="false" />
+    </group>
+    <group
+        android:id="@+id/gr10"
+        android:checkableBehavior="single">
         <item
             android:id="@+id/cacnhamang"
             android:title="Các nhà mạng" />
     </group>
-    <group android:id="@+id/grp6" android:checkableBehavior="single">
+    <group
+        android:id="@+id/gr11"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/simviettel"
+            android:title="Sim Viettel"
+            android:icon="@drawable/ic_right"
+            android:visible="false"/>
+    </group>
+    <group
+        android:id="@+id/gr12"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/simvinaphone"
+            android:title="Sim Vinaphone"
+            android:icon="@drawable/ic_right"
+            android:visible="false"/>
+    </group>
+    <group
+        android:id="@+id/gr13"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/simmobifone"
+            android:title="Sim Mobifone"
+            android:icon="@drawable/ic_right"
+            android:visible="false"/>
+    </group>
+    <group
+        android:id="@+id/gr14"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/simvietnamobile"
+            android:title="Sim Vietnamobile"
+            android:icon="@drawable/ic_right"
+            android:visible="false"/>
+    </group>
+    <group
+        android:id="@+id/gr15"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/simgmobile"
+            android:title="Sim Gmobile"
+            android:icon="@drawable/ic_right"
+            android:visible="false"/>
+    </group>
+    <group
+        android:id="@+id/gr16"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/simcodinh"
+            android:title="Sim Cố Định"
+            android:icon="@drawable/ic_right"
+            android:visible="false"/>
+    </group>
+    <group
+        android:id="@+id/gr17"
+        android:checkableBehavior="single">
         <item
             android:id="@+id/cacloaisim"
             android:title="Các loại sim" />
     </group>
-    <group android:id="@+id/grp7" android:checkableBehavior="single">
+    <group
+        android:id="@+id/gr18"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/simlucquy"
+            android:title="Sim lục quý"
+            android:icon="@drawable/ic_right"
+            android:visible="false"/>
+    </group>
+    <group
+        android:id="@+id/gr19"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/simtuquy"
+            android:title="Sim tứ quý"
+            android:icon="@drawable/ic_right"
+            android:visible="false"/>
+    </group>
+    <group
+        android:id="@+id/gr20"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/simtamhoa"
+            android:title="Sim tam hoa"
+            android:icon="@drawable/ic_right"
+            android:visible="false"/>
+    </group>
+    <group
+        android:id="@+id/gr21"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/simtamhoakep"
+            android:title="Sim tam hoa kép"
+            android:icon="@drawable/ic_right"
+            android:visible="false"/>
+    </group>
+    <group
+        android:id="@+id/gr22"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/simtamhoagiua"
+            android:title="Sim tam hoa giữa"
+            android:icon="@drawable/ic_right"
+            android:visible="false"/>
+    </group>
+    <group
+        android:id="@+id/gr23"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/simtaxiab"
+            android:title="Sim taxi AB"
+            android:icon="@drawable/ic_right"
+            android:visible="false"/>
+    </group>
+    <group
+        android:id="@+id/gr24"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/simtaxiabcd"
+            android:title="Sim taxi ABCD"
+            android:icon="@drawable/ic_right"
+            android:visible="false"/>
+    </group>
+    <group
+        android:id="@+id/gr25"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/simlocphat"
+            android:title="Sim lộc phát"
+            android:icon="@drawable/ic_right"
+            android:visible="false"/>
+    </group>
+    <group
+        android:id="@+id/gr26"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/simlap"
+            android:title="Sim lặp"
+            android:icon="@drawable/ic_right"
+            android:visible="false"/>
+    </group>
+    <group
+        android:id="@+id/gr27"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/simganh"
+            android:title="Sim gánh"
+            android:icon="@drawable/ic_right"
+            android:visible="false"/>
+    </group>
+    <group
+        android:id="@+id/gr28"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/simtiendon"
+            android:title="Sim tiến đơn"
+            android:icon="@drawable/ic_right"
+            android:visible="false"/>
+    </group>
+    <group
+        android:id="@+id/gr29"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/simtiendoi"
+            android:title="Sim tiến đôi"
+            android:icon="@drawable/ic_right"
+            android:visible="false"/>
+    </group>
+    <group
+        android:id="@+id/gr30"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/simkep2"
+            android:title="Sim kép 2"
+            android:icon="@drawable/ic_right"
+            android:visible="false"/>
+    </group>
+    <group
+        android:id="@+id/gr31"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/simkep3"
+            android:title="Sim kép 3"
+            android:icon="@drawable/ic_right"
+            android:visible="false"/>
+    </group>
+    <group
+        android:id="@+id/gr32"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/simsodao2"
+            android:title="Sim số đảo 2"
+            android:icon="@drawable/ic_right"
+            android:visible="false"/>
+    </group>
+    <group
+        android:id="@+id/gr33"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/simsodao3"
+            android:title="Sim số đảo 3"
+            android:icon="@drawable/ic_right"
+            android:visible="false"/>
+    </group>
+    <group
+        android:id="@+id/gr34"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/simthantai"
+            android:title="Sim thần tài"
+            android:icon="@drawable/ic_right"
+            android:visible="false"/>
+    </group>
+    <group
+        android:id="@+id/gr35"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/simongdia"
+            android:title="Sim ông địa"
+            android:icon="@drawable/ic_right"
+            android:visible="false"/>
+    </group>
+    <group
+        android:id="@+id/gr36"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/simdausoco"
+            android:title="Sim đầu số cổ"
+            android:icon="@drawable/ic_right"
+            android:visible="false"/>
+    </group>
+    <group
+        android:id="@+id/gr37"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/simsodep"
+            android:title="Sim số đẹp"
+            android:icon="@drawable/ic_right"
+            android:visible="false"/>
+    </group>
+    <group
+        android:id="@+id/gr38"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/simdacbiet"
+            android:title="Sim đặc biệt"
+            android:icon="@drawable/ic_right"
+            android:visible="false"/>
+    </group>
+    <group
+        android:id="@+id/gr39"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/simgiare"
+            android:title="Sim giá rẻ"
+            android:icon="@drawable/ic_right"
+            android:visible="false"/>
+    </group>
+
+    <group
+        android:id="@+id/gr40"
+        android:checkableBehavior="single">
         <item
             android:id="@+id/tintuc"
             android:title="Tin tức" />
     </group>
-    <group android:id="@+id/grp8" android:checkableBehavior="single">
+    <group
+        android:id="@+id/gr41"
+        android:checkableBehavior="single">
         <item
             android:id="@+id/lienhe"
             android:title="Liên hệ" />

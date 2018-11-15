@@ -130,7 +130,8 @@
         android:layout_alignParentBottom="true"
         android:text="Đã chọn 20 chuyển qua 10 số ->"
         android:textColor="@color/colorWhite"
-        android:background="@android:color/darker_gray"
+        android:textSize="16sp"
+        android:background="#ad0909"
         android:gravity="center"
-        android:visibility="gone"/>
+        android:visibility="visible"/>
 </RelativeLayout>
