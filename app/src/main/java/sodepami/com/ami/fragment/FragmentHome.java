@@ -52,7 +52,7 @@ public class FragmentHome extends Fragment implements View.OnClickListener{
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view =  inflater.inflate(R.layout.fragment_fragment_home, container, false);
+        View view =  inflater.inflate(R.layout.fragment_home_new, container, false);
 
         initView(view);
         initClickedListener();
@@ -61,7 +61,6 @@ public class FragmentHome extends Fragment implements View.OnClickListener{
     }
 
     private void initView(View view) {
-        llContact = (ImageView) view.findViewById(R.id.ll_contact);
         llBirthday = (ImageView) view.findViewById(R.id.ll_sim_birthday);
         llTragop = (ImageView) view.findViewById(R.id.ll_sim_tragop);
         llPhongthuy = (ImageView) view.findViewById(R.id.ll_sim_phongthuy);
@@ -76,7 +75,6 @@ public class FragmentHome extends Fragment implements View.OnClickListener{
     }
 
     private void initClickedListener() {
-        llContact.setOnClickListener(this);
         llBirthday.setOnClickListener(this);
         llTragop.setOnClickListener(this);
         llPhongthuy.setOnClickListener(this);
@@ -109,11 +107,11 @@ public class FragmentHome extends Fragment implements View.OnClickListener{
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.ll_contact:
+            /*case R.id.ll_contact:
                 if (mListener != null) {
                     mListener.onChangeContactClicked();
                 }
-                break;
+                break;*/
             case R.id.ll_sim_birthday:
                 WebActivity.startWebActivity(getContext(), "https://sodepami.vn/sim-nam-sinh.html");
                 break;
