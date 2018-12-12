@@ -5,46 +5,37 @@ import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.design.internal.NavigationMenuItemView;
+import android.support.annotation.NonNull;
 import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
+import android.widget.Toast;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import sodepami.com.ami.fragment.FragmentHome;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, FragmentHome.OnFragmentInteractionListener, View.OnClickListener {
+        implements NavigationView.OnNavigationItemSelectedListener {
 
     @BindView(R.id.toolbar)
     Toolbar mToolbar;
 
-    @BindView(R.id.img_action)
-    ImageView imgBack;
-
-    @BindView(R.id.drawer_layout)
-    DrawerLayout drawerLayout;
-
     @BindView(R.id.app_bar)
     AppBarLayout appBar;
 
-    @BindView(R.id.nav_view)
-    NavigationView mSlideNaviView;
-
     @BindView(R.id.content_container)
     FrameLayout mContentFrame;
+
+    @BindView(R.id.navigation)
+    BottomNavigationView mBottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,9 +45,34 @@ public class MainActivity extends AppCompatActivity
 
         ButterKnife.bind(this);
 
-        initViewClickedListener();
-        initNavigationDrawer();
         initFragmentHome();
+        setupListener();
+    }
+
+    private void setupListener() {
+        mBottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                switch (menuItem.getItemId()) {
+                    case R.id.navigation_hotline:
+                        Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:19002219"));
+                        startActivity(intent);
+                        break;
+                    case R.id.navigation_notice:
+                        Toast.makeText(MainActivity.this, "Tính năng đang được cập nhật", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.navigation_thuonghieu:
+                        WebActivity.startWebActivity(MainActivity.this, "https://sodepami.vn/bai-viet/thuong-hieu-ami.html");
+                        break;
+                    case R.id.navigation_connect:
+                        WebActivity.startWebActivity(MainActivity.this, "https://sodepami.vn/ctv");
+                        break;
+                    default:
+                        break;
+                }
+                return true;
+            }
+        });
     }
 
     private void setStatusBar() {
@@ -67,40 +83,10 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    /**
-     * init view clicked listener
-     */
-    private void initViewClickedListener() {
-        imgBack.setOnClickListener(this);
-    }
-
     private void initFragmentHome() {
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         FragmentHome fragmentHome = new FragmentHome();
-        fragmentHome.setListener(this);
         ft.replace(R.id.content_container, fragmentHome).commit();
-    }
-
-    private void initNavigationDrawer() {
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawerLayout, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawerLayout.addDrawerListener(toggle);
-        toggle.syncState();
-        mSlideNaviView.setItemIconTintList(null);
-        mSlideNaviView.getMenu().getItem(3).setActionView(R.layout.nav_drawer_overlap);
-        mSlideNaviView.getMenu().getItem(9).setActionView(R.layout.nav_drawer_overlap);
-        mSlideNaviView.getMenu().getItem(16).setActionView(R.layout.nav_drawer_overlap);
-        mSlideNaviView.setNavigationItemSelectedListener(this);
-    }
-
-    @Override
-    public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
@@ -118,55 +104,6 @@ public class MainActivity extends AppCompatActivity
             case R.id.huongdanmuasim:
                 WebActivity.startWebActivity(MainActivity.this, "https://sodepami.vn/thong-tin/huong-dan-mua-sim.html");
                 break;
-            case R.id.cacdichvucungcap:
-                if (mSlideNaviView.getMenu().getItem(4).isVisible()) {
-                    mSlideNaviView.getMenu().getItem(3).setActionView(R.layout.nav_drawer_overlap);
-                    mSlideNaviView.getMenu().getItem(4).setVisible(false);
-                    mSlideNaviView.getMenu().getItem(5).setVisible(false);
-                    mSlideNaviView.getMenu().getItem(6).setVisible(false);
-                    mSlideNaviView.getMenu().getItem(7).setVisible(false);
-                    mSlideNaviView.getMenu().getItem(8).setVisible(false);
-                } else {
-                    mSlideNaviView.getMenu().getItem(3).setActionView(R.layout.nav_drawer_collap);
-                    mSlideNaviView.getMenu().getItem(4).setVisible(true);
-                    mSlideNaviView.getMenu().getItem(5).setVisible(true);
-                    mSlideNaviView.getMenu().getItem(6).setVisible(true);
-                    mSlideNaviView.getMenu().getItem(7).setVisible(true);
-                    mSlideNaviView.getMenu().getItem(8).setVisible(true);
-                }
-                return false;
-            case R.id.cacnhamang:
-                if (mSlideNaviView.getMenu().getItem(10).isVisible()) {
-                    mSlideNaviView.getMenu().getItem(9).setActionView(R.layout.nav_drawer_overlap);
-                    mSlideNaviView.getMenu().getItem(10).setVisible(false);
-                    mSlideNaviView.getMenu().getItem(11).setVisible(false);
-                    mSlideNaviView.getMenu().getItem(12).setVisible(false);
-                    mSlideNaviView.getMenu().getItem(13).setVisible(false);
-                    mSlideNaviView.getMenu().getItem(14).setVisible(false);
-                    mSlideNaviView.getMenu().getItem(15).setVisible(false);
-                } else {
-                    mSlideNaviView.getMenu().getItem(9).setActionView(R.layout.nav_drawer_collap);
-                    mSlideNaviView.getMenu().getItem(10).setVisible(true);
-                    mSlideNaviView.getMenu().getItem(11).setVisible(true);
-                    mSlideNaviView.getMenu().getItem(12).setVisible(true);
-                    mSlideNaviView.getMenu().getItem(13).setVisible(true);
-                    mSlideNaviView.getMenu().getItem(14).setVisible(true);
-                    mSlideNaviView.getMenu().getItem(15).setVisible(true);
-                }
-                return false;
-            case R.id.cacloaisim:
-                if (mSlideNaviView.getMenu().getItem(17).isVisible()) {
-                    mSlideNaviView.getMenu().getItem(16).setActionView(R.layout.nav_drawer_overlap);
-                    for (int i = 17; i < 40; i++) {
-                        mSlideNaviView.getMenu().getItem(i).setVisible(false);
-                    }
-                } else {
-                    mSlideNaviView.getMenu().getItem(16).setActionView(R.layout.nav_drawer_collap);
-                    for (int i = 17; i < 40; i++) {
-                        mSlideNaviView.getMenu().getItem(i).setVisible(true);
-                    }
-                }
-                return false;
             case R.id.tintuc:
                 WebActivity.startWebActivity(MainActivity.this, "https://sodepami.vn/tin-tuc.html");
                 break;
@@ -279,25 +216,7 @@ public class MainActivity extends AppCompatActivity
 
         }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 
-    @Override
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.img_action:
-                drawerLayout.openDrawer(GravityCompat.START);
-                break;
-            default:
-                return;
-        }
-    }
-
-    @Override
-    public void onChangeContactClicked() {
-        Intent intent = new Intent(this, ChangeNumberActivity.class);
-        startActivity(intent);
-    }
 }

@@ -5,4 +5,6 @@
     <color name="colorAccent">#ad0909</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="color_menu_divider">#484848</color>
+    <color name="color_red">#ad0909</color>
+    <color name="color_black">#2f2f2f</color>
 </resources>

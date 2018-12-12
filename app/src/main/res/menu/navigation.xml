@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_hotline"
+        android:icon="@drawable/ic_hotline"
+        android:title="Hotline" />
+
+    <item
+        android:id="@+id/navigation_notice"
+        android:icon="@drawable/ic_notice"
+        android:title="Thông báo" />
+
+    <item
+        android:id="@+id/navigation_thuonghieu"
+        android:icon="@drawable/ic_thuonghieu"
+        android:title="Thương hiệu" />
+
+    <item
+        android:id="@+id/navigation_connect"
+        android:icon="@drawable/ic_connect"
+        android:title="Kết nối &amp; Hợp tác" />
+
+</menu>

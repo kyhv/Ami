@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragment.FragmentHome">
     <ScrollView
         android:id="@+id/scrollView"
@@ -228,291 +228,510 @@
                 </RelativeLayout>
             </RelativeLayout>
 
-            <ImageView
-                android:id="@+id/ll_sim_birthday"
+            <android.support.v4.view.ViewPager
+                android:id="@+id/pager"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_marginTop="0dp"
-                android:adjustViewBounds="true"
-                android:scaleType="fitStart"
-                android:src="@drawable/bg_sim_birthday"
-                android:layout_below="@id/ll_service"/>
+                android:layout_height="140dp"
+                android:layout_below="@id/ll_service"
+                android:layout_margin="1dp"/>
 
-            <ImageView
-                android:id="@+id/ll_sim_tragop"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/ll_sim_birthday"
-                android:layout_marginBottom="5dp"
-                android:scaleType="fitStart"
-                android:adjustViewBounds="true"
-                android:src="@drawable/bg_sim_tragop">
-            </ImageView>
+            <Button
+                android:id="@+id/bt_pre"
+                android:layout_width="10dp"
+                android:layout_height="15dp"
+                android:padding="20dp"
+                android:background="@drawable/btn_pre"
+                android:layout_below="@+id/ll_service"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="65dp"
+                android:adjustViewBounds="true"/>
+            <Button
+                android:id="@+id/bt_next"
+                android:layout_width="10dp"
+                android:layout_height="15dp"
+                android:padding="20dp"
+                android:background="@drawable/btn_next"
+                android:layout_below="@+id/ll_service"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="65dp"
+                android:adjustViewBounds="true"/>
 
-            <ImageView
-                android:id="@+id/ll_sim_phongthuy"
+            <me.relex.circleindicator.CircleIndicator
+                android:id="@+id/indicator"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/ll_sim_tragop"
-                android:layout_marginBottom="5dp"
-                android:scaleType="fitStart"
-                android:adjustViewBounds="true"
-                android:src="@drawable/bg_sim_phongthuy">
-            </ImageView>
+                android:layout_height="125dp"
+                app:ci_drawable="@drawable/indicator"
+                app:ci_gravity="center_horizontal|bottom"
+                android:layout_below="@id/ll_service" />
 
-            <ImageView
-                android:id="@+id/ll_sim_khuyenmai50"
+            <LinearLayout
+                android:id="@+id/ll_option"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/ll_sim_phongthuy"
-                android:layout_marginBottom="5dp"
-                android:scaleType="fitStart"
-                android:adjustViewBounds="true"
-                android:src="@drawable/bg_sim_khuyenmai50">
-            </ImageView>
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_below="@+id/pager">
 
-            <ImageView
-                android:id="@+id/ll_sim_vip"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/ll_sim_khuyenmai50"
-                android:layout_marginBottom="5dp"
-                android:scaleType="fitStart"
-                android:adjustViewBounds="true"
-                android:src="@drawable/bg_sim_vip">
-            </ImageView>
-
-            <ImageView
-                android:id="@+id/ll_sim_laixuatthap"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/ll_sim_vip"
-                android:layout_marginBottom="5dp"
-                android:scaleType="fitStart"
-                android:adjustViewBounds="true"
-                android:src="@drawable/bg_sim_laixuatthap">
-            </ImageView>
-
-            <ImageView
-                android:id="@+id/ll_connect"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/ll_sim_laixuatthap"
-                android:scaleType="fitStart"
-                android:adjustViewBounds="true"
-                android:layout_marginBottom="5dp"
-                android:src="@drawable/ic_connect">
-            </ImageView>
+                <Button
+                    android:id="@+id/bt_cacloaisim"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="CÁC LOẠI SIM"
+                    android:textColor="@color/colorWhite"
+                    android:background="@color/color_black" />
+                <Button
+                    android:id="@+id/bt_cacnhamang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="CÁC NHÀ MẠNG"
+                    android:textColor="@color/colorWhite"
+                    android:background="@color/color_red" />
+            </LinearLayout>
 
             <RelativeLayout
-                android:id="@+id/ll_contact_info"
+                android:id="@+id/ll_cacloaisim"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/ll_connect"
-                android:background="#2F2F2F">
-
+                android:layout_below="@+id/ll_option"
+                android:visibility="visible">
                 <TextView
-                    android:id="@+id/tvOffice"
+                    android:id="@+id/sim1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginLeft="20dp"
                     android:layout_alignParentLeft="true"
-                    android:text="VĂN PHÒNG GIAO DỊCH"
-                    android:textStyle="bold"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="20sp" />
-
-                <TextView
-                    android:id="@+id/tvOffice1It1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_alignParentLeft="true"
-                    android:drawableLeft="@drawable/ic_map"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Sim lục quý"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="14sp"
+                    android:drawableLeft="@drawable/ic_sim"
                     android:drawablePadding="5dp"
-                    android:text="Văn phòng hà nội:"
-                    android:textStyle="bold"
-                    android:textColor="@color/colorWhite"
-                    android:layout_below="@+id/tvOffice"
-                    android:textSize="16sp" />
+                    android:gravity="center_vertical"/>
                 <TextView
-                    android:id="@+id/tvOffice1It2"
+                    android:id="@+id/sim2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="32dp"
                     android:layout_alignParentLeft="true"
-                    android:text="C15 Trần Điền - Định Công - Hoàng Mai - Tp Hà Nội."
-                    android:textColor="@color/colorWhite"
-                    android:layout_below="@+id/tvOffice1It1"
-                    android:textSize="16sp" />
-                <TextView
-                    android:id="@+id/tvOffice1It3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="32dp"
-                    android:layout_alignParentLeft="true"
-                    android:text="Điện thoại: (024) 39.11.9999"
-                    android:textColor="@color/colorWhite"
-                    android:layout_below="@+id/tvOffice1It2"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:id="@+id/tvOffice2It1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_alignParentLeft="true"
-                    android:drawableLeft="@drawable/ic_map"
+                    android:layout_below="@+id/sim1"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Sim ngũ quý"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="14sp"
+                    android:drawableLeft="@drawable/ic_sim"
                     android:drawablePadding="5dp"
-                    android:text="Văn phòng TP HCM:"
-                    android:textStyle="bold"
-                    android:textColor="@color/colorWhite"
-                    android:layout_below="@+id/tvOffice1It3"
-                    android:textSize="16sp" />
+                    android:gravity="center_vertical"/>
                 <TextView
-                    android:id="@+id/tvOffice2It2"
+                    android:id="@+id/sim3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="32dp"
                     android:layout_alignParentLeft="true"
-                    android:text="244/31/31 Hiệp Thành 17 - Hiệp Thành - Q12 - Tp Hồ Chí Minh."
-                    android:textColor="@color/colorWhite"
-                    android:layout_below="@+id/tvOffice2It1"
-                    android:textSize="16sp" />
-                <TextView
-                    android:id="@+id/tvOffice2It3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="32dp"
-                    android:layout_alignParentLeft="true"
-                    android:text="Điện thoại: (028) 38.86.8888"
-                    android:textColor="@color/colorWhite"
-                    android:layout_below="@+id/tvOffice2It2"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:id="@+id/tvOffice3It1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_alignParentLeft="true"
-                    android:drawableLeft="@drawable/ic_map"
+                    android:layout_below="@+id/sim2"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Sim tứ quý"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="14sp"
+                    android:drawableLeft="@drawable/ic_sim"
                     android:drawablePadding="5dp"
-                    android:text="Văn phòng Đà Nẵng:"
-                    android:textStyle="bold"
-                    android:textColor="@color/colorWhite"
-                    android:layout_below="@+id/tvOffice2It3"
-                    android:textSize="16sp" />
+                    android:gravity="center_vertical"/>
                 <TextView
-                    android:id="@+id/tvOffice3It2"
+                    android:id="@+id/sim4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="32dp"
                     android:layout_alignParentLeft="true"
-                    android:text="21 Trương Chí Cương - Hải Châu - Đà Nẵng."
-                    android:textColor="@color/colorWhite"
-                    android:layout_below="@+id/tvOffice3It1"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:id="@+id/tvOffice4It1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_alignParentLeft="true"
-                    android:drawableLeft="@drawable/ic_map"
+                    android:layout_below="@+id/sim3"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Sim tam hoa"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="14sp"
+                    android:drawableLeft="@drawable/ic_sim"
                     android:drawablePadding="5dp"
-                    android:text="Văn phòng Hải Dương:"
-                    android:textStyle="bold"
-                    android:textColor="@color/colorWhite"
-                    android:layout_below="@+id/tvOffice3It2"
-                    android:textSize="16sp" />
+                    android:gravity="center_vertical"/>
                 <TextView
-                    android:id="@+id/tvOffice4It2"
+                    android:id="@+id/sim5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="32dp"
                     android:layout_alignParentLeft="true"
-                    android:text="39 Lê Thanh Nghị - Phạm Ngũ Lão - Tp Hải Dương."
-                    android:textColor="@color/colorWhite"
-                    android:layout_below="@+id/tvOffice4It1"
-                    android:textSize="16sp" />
+                    android:layout_below="@+id/sim4"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Sim tam hoa kép"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="14sp"
+                    android:drawableLeft="@drawable/ic_sim"
+                    android:drawablePadding="5dp"
+                    android:gravity="center_vertical"/>
                 <TextView
-                    android:id="@+id/tvOffice4It3"
+                    android:id="@+id/sim6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="32dp"
                     android:layout_alignParentLeft="true"
-                    android:text="Điện thoại: (0220) 3.86.86.86"
-                    android:textColor="@color/colorWhite"
-                    android:layout_below="@+id/tvOffice4It2"
-                    android:textSize="16sp" />
+                    android:layout_below="@+id/sim5"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Sim tam hoa giữa"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="14sp"
+                    android:drawableLeft="@drawable/ic_sim"
+                    android:drawablePadding="5dp"
+                    android:gravity="center_vertical"/>
+                <TextView
+                    android:id="@+id/sim7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/sim6"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Sim taxi AB"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="14sp"
+                    android:drawableLeft="@drawable/ic_sim"
+                    android:drawablePadding="5dp"
+                    android:gravity="center_vertical"/>
+                <TextView
+                    android:id="@+id/sim8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/sim7"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Sim taxi ABC"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="14sp"
+                    android:drawableLeft="@drawable/ic_sim"
+                    android:drawablePadding="5dp"
+                    android:gravity="center_vertical"/>
+                <TextView
+                    android:id="@+id/sim9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/sim8"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Sim taxi ABCD"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="14sp"
+                    android:drawableLeft="@drawable/ic_sim"
+                    android:drawablePadding="5dp"
+                    android:gravity="center_vertical"/>
+                <TextView
+                    android:id="@+id/sim10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/sim9"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Sim lộc phát"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="14sp"
+                    android:drawableLeft="@drawable/ic_sim"
+                    android:drawablePadding="5dp"
+                    android:gravity="center_vertical"/>
+                <TextView
+                    android:id="@+id/sim11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/sim10"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Sim lặp"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="14sp"
+                    android:drawableLeft="@drawable/ic_sim"
+                    android:drawablePadding="5dp"
+                    android:gravity="center_vertical"/>
+                <TextView
+                    android:id="@+id/sim12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/sim11"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="Sim gánh"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="14sp"
+                    android:drawableLeft="@drawable/ic_sim"
+                    android:drawablePadding="5dp"
+                    android:gravity="center_vertical"/>
 
                 <TextView
-                    android:id="@+id/tvGuide"
+                    android:id="@+id/sim13"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginBottom="15dp"
-                    android:layout_alignParentLeft="true"
-                    android:text="* Các chi nhánh đại lý sim số đẹp trên khắp cả nước. Hỗ trợ giao sim tận nơi và miễn phí trên toàn quốc."
-                    android:textColor="@color/colorWhite"
-                    android:layout_below="@+id/tvOffice4It3"
-                    android:textSize="16sp" />
-                <RelativeLayout
-                    android:layout_width="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Sim tiếp đơn"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="14sp"
+                    android:drawableLeft="@drawable/ic_sim"
+                    android:drawablePadding="5dp"
+                    android:gravity="center_vertical"/>
+                <TextView
+                    android:id="@+id/sim14"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@android:color/black"
-                    android:layout_below="@+id/tvGuide">
-                    <TextView
-                        android:id="@+id/tvBanquyen"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="20dp"
-                        android:text="Bản quyền @2003 - 2018 by SODEPAMI.COM - Thương hiệu sim số đẹp lớn nhất Việt Nam!"
-                        android:textColor="@color/colorWhite"
-                        android:textSize="16sp"
-                        android:gravity="center"/>
-                </RelativeLayout>
+                    android:layout_alignParentRight="true"
+                    android:layout_alignLeft="@+id/sim13"
+                    android:layout_below="@+id/sim13"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Sim tiếp đôi"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="14sp"
+                    android:drawableLeft="@drawable/ic_sim"
+                    android:drawablePadding="5dp"
+                    android:gravity="center_vertical"/>
+                <TextView
+                    android:id="@+id/sim15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignLeft="@+id/sim13"
+                    android:layout_below="@+id/sim14"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Sim kép 2"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="14sp"
+                    android:drawableLeft="@drawable/ic_sim"
+                    android:drawablePadding="5dp"
+                    android:gravity="center_vertical"/>
+                <TextView
+                    android:id="@+id/sim16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignLeft="@+id/sim13"
+                    android:layout_below="@+id/sim15"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Sim kép 3"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="14sp"
+                    android:drawableLeft="@drawable/ic_sim"
+                    android:drawablePadding="5dp"
+                    android:gravity="center_vertical"/>
+                <TextView
+                    android:id="@+id/sim17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignLeft="@+id/sim13"
+                    android:layout_below="@+id/sim16"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Sim số đảo 2"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="14sp"
+                    android:drawableLeft="@drawable/ic_sim"
+                    android:drawablePadding="5dp"
+                    android:gravity="center_vertical"/>
+                <TextView
+                    android:id="@+id/sim18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignLeft="@+id/sim13"
+                    android:layout_below="@+id/sim17"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Sim số đảo 3"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="14sp"
+                    android:drawableLeft="@drawable/ic_sim"
+                    android:drawablePadding="5dp"
+                    android:gravity="center_vertical"/>
+                <TextView
+                    android:id="@+id/sim19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignLeft="@+id/sim13"
+                    android:layout_below="@+id/sim18"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Sim thần tài"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="14sp"
+                    android:drawableLeft="@drawable/ic_sim"
+                    android:drawablePadding="5dp"
+                    android:gravity="center_vertical"/>
+                <TextView
+                    android:id="@+id/sim20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignLeft="@+id/sim13"
+                    android:layout_below="@+id/sim19"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Sim ông địa"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="14sp"
+                    android:drawableLeft="@drawable/ic_sim"
+                    android:drawablePadding="5dp"
+                    android:gravity="center_vertical"/>
+                <TextView
+                    android:id="@+id/sim21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignLeft="@+id/sim13"
+                    android:layout_below="@+id/sim20"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Sim đầu số cổ"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="14sp"
+                    android:drawableLeft="@drawable/ic_sim"
+                    android:drawablePadding="5dp"
+                    android:gravity="center_vertical"/>
+                <TextView
+                    android:id="@+id/sim22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignLeft="@+id/sim13"
+                    android:layout_below="@+id/sim21"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Sim số đẹp"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="14sp"
+                    android:drawableLeft="@drawable/ic_sim"
+                    android:drawablePadding="5dp"
+                    android:gravity="center_vertical"/>
+                <TextView
+                    android:id="@+id/sim23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignLeft="@+id/sim13"
+                    android:layout_below="@+id/sim22"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Sim đặc biệt"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="14sp"
+                    android:drawableLeft="@drawable/ic_sim"
+                    android:drawablePadding="5dp"
+                    android:gravity="center_vertical"/>
+                <TextView
+                    android:id="@+id/sim24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignLeft="@+id/sim13"
+                    android:layout_below="@+id/sim23"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Sim giá rẻ"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="14sp"
+                    android:drawableLeft="@drawable/ic_sim"
+                    android:drawablePadding="5dp"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="10dp"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/ll_nhamang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_option"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/nhamang1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="14sp"
+                    android:drawableLeft="@drawable/ic_nhamang5"
+                    android:drawablePadding="5dp"
+                    android:gravity="center_vertical"/>
+                <TextView
+                    android:id="@+id/nhamang2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="14sp"
+                    android:drawableLeft="@drawable/ic_nhamang6"
+                    android:drawablePadding="5dp"
+                    android:gravity="center_vertical"/>
+                <TextView
+                    android:id="@+id/nhamang3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="14sp"
+                    android:drawableLeft="@drawable/ic_nhamang4"
+                    android:drawablePadding="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center_vertical"/>
+                <TextView
+                    android:id="@+id/nhamang4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/nhamang1"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="14sp"
+                    android:drawableLeft="@drawable/ic_nhamang1"
+                    android:drawablePadding="5dp"
+                    android:gravity="center_vertical"/>
+                <TextView
+                    android:id="@+id/nhamang5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/nhamang2"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="14sp"
+                    android:drawableLeft="@drawable/ic_nhamang3"
+                    android:drawablePadding="5dp"
+                    android:gravity="center_vertical"/>
+                <TextView
+                    android:id="@+id/nhamang6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/nhamang3"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="14sp"
+                    android:drawableLeft="@drawable/ic_nhamang2"
+                    android:drawablePadding="5dp"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="10dp"/>
             </RelativeLayout>
         </RelativeLayout>
     </ScrollView>
-
-    <LinearLayout
-        android:id="@+id/layoutHotro"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:orientation="horizontal"
-        android:weightSum="1"
-        android:padding="0dp"
-        android:layout_margin="0dp">
-        <ImageView
-            android:id="@+id/btHotro"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/colorWhite"
-            android:layout_weight="0.5"
-            android:padding="0dp"
-            android:src="@drawable/ic_hotro"
-            android:layout_marginRight="1dp"
-            android:adjustViewBounds="true"/>
-        <ImageView
-            android:id="@+id/btChat"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_chat"
-            android:layout_weight="0.5"
-            android:padding="0dp"
-            android:layout_marginLeft="1dp"
-            android:adjustViewBounds="true"/>
-    </LinearLayout>
 
 </RelativeLayout>

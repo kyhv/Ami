@@ -67,9 +67,6 @@ public class ChangeNumberActivity extends AppCompatActivity implements ContactAd
     @BindView(R.id.bt_restore)
     ImageButton btRestore;
 
-    @BindView(R.id.img_action)
-    ImageView imBack;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -93,14 +90,6 @@ public class ChangeNumberActivity extends AppCompatActivity implements ContactAd
     }
 
     private void initClickedListener() {
-        imBack.setImageResource(R.drawable.ic_back);
-        imBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ChangeNumberActivity.this.finish();
-            }
-        });
-
         ibSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
