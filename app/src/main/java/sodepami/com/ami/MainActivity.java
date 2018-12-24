@@ -20,6 +20,7 @@ import android.widget.Toast;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import sodepami.com.ami.custom.BottomNavigationViewHelper;
 import sodepami.com.ami.fragment.FragmentHome;
 
 public class MainActivity extends AppCompatActivity
@@ -50,6 +51,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void setupListener() {
+        BottomNavigationViewHelper.removeShiftMode(mBottomNavigationView);
         mBottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
