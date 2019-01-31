@@ -18,7 +18,7 @@
 
     <item
         android:id="@+id/navigation_connect"
-        android:icon="@drawable/ic_connect"
-        android:title="Kết nối &amp; Hợp tác" />
+        android:icon="@drawable/ic_account"
+        android:title="Tài khoản" />
 
 </menu>
